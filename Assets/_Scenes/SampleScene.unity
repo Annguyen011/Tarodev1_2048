@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &485522731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485522732}
+  m_Layer: 0
+  m_Name: BoardHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &485522732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485522731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 907204549}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +246,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &597863417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597863418}
+  m_Layer: 0
+  m_Name: BlockHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &597863418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597863417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 907204549}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907204547
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,12 +306,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42bcd106af813f647a7cd408219bf1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  types: []
+  blockHolder: {fileID: 597863418}
+  nodeHolder: {fileID: 1480889162}
+  boardHolder: {fileID: 485522732}
+  types:
+  - value: 2
+    color: {r: 0.8745098, g: 0.4, b: 0.7372549, a: 0}
+  - value: 4
+    color: {r: 0.3764706, g: 0.7372549, b: 0.25882354, a: 0}
+  - value: 8
+    color: {r: 0.22745098, g: 0.72156864, b: 0.79607844, a: 0}
+  - value: 16
+    color: {r: 0.21176471, g: 0.5019608, b: 0.85882354, a: 0}
+  - value: 32
+    color: {r: 0.9098039, g: 0.4117647, b: 0.2784314, a: 0}
+  - value: 64
+    color: {r: 0.54509807, g: 0.5019608, b: 0.9843137, a: 0}
+  - value: 128
+    color: {r: 0.5882353, g: 0.5372549, b: 0.5019608, a: 0}
+  - value: 256
+    color: {r: 1, g: 0.6784314, b: 0.16078432, a: 0}
+  - value: 512
+    color: {r: 0.99607843, g: 0.39215687, b: 0.44705883, a: 0}
+  - value: 1024
+    color: {r: 0.76862746, g: 0.16470589, b: 0.03529412, a: 0}
+  - value: 2048
+    color: {r: 0.827451, g: 0.23529412, b: 0.9254902, a: 0}
+  state: 0
+  round: 0
   width: 4
-  height: 4
+  height: 5
   nodePrefab: {fileID: 5310167758652028570, guid: 11fbbb5457f067743b786dd3d0de4f12, type: 3}
-  blockPrefab: {fileID: 0}
-  boardPrefab: {fileID: 0}
+  blockPrefab: {fileID: 5743146267305291500, guid: b4c46bfa5ae4f0a429434cebec957bf0, type: 3}
+  boardPrefab: {fileID: 6780442088548718507, guid: 58b00298222fdd54595f60d2afd9e1af, type: 3}
   nodes: []
   blocks: []
 --- !u!4 &907204549
@@ -263,7 +352,41 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 485522732}
+  - {fileID: 1480889162}
+  - {fileID: 597863418}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1480889161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480889162}
+  m_Layer: 0
+  m_Name: NodeHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480889162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480889161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 907204549}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
